@@ -5,7 +5,7 @@ lint:
 	ruff check .
 
 test:
-	pytest ./tests
+	pytest -rP ./tests
 
 type:
 	pyright validator
