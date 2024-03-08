@@ -7,10 +7,12 @@
 | Blog | - |
 | License | Apache 2 |
 | Input/Output | Output |
+| Open-source contributor | [Alex Falconer-Athanassakos](https://github.com/alexf-a) |
 
 ## Description
 
 This validator validates an LLM response by grading the response against a set of provided metrics and criteria. If the evaluation for each criterion is above a certain threshold, the response is considered valid. Otherwise, the response is considered invalid.
+
 
 ## Requirements
 * Dependencies: `litellm`
