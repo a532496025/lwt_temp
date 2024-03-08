@@ -144,7 +144,6 @@ class LLMCritic(Validator):
         """
         # 1. Setup the prompt
         prompt = self.get_evaluation_prompt(value)
-        print("\nPrompt:\n", prompt)
 
         # 2. Get the LLM response
         llm_response = self.get_llm_response(prompt)
@@ -153,7 +152,6 @@ class LLMCritic(Validator):
         evaluation = None
         try:
             evaluation = json.loads(llm_response)
-            print("\nMetrics:\n", self.metrics)
             print("\nEvaluation:\n", evaluation)
         except Exception as e:
             raise RuntimeError(
