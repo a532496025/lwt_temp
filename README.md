@@ -65,11 +65,11 @@ guard = Guard().use(
 # Test passing response
 guard.validate(
     """
-    A judge has ordered former President Donald Trump to pay approximately $450 million to New York State in a civil 
+    A judge has ordered former President Donald Trump to pay approximately $450 million to New York State in a civil
     fraud case, which could significantly impact his financial assets. The ruling also restricts Trump from running any
-    New York company and obtaining loans from New York banks for a specified period. These measures are described as 
-    unprecedented threats to Trump's finances and may temporarily set back his real estate company. A court-appointed 
-    monitor will oversee the family business. Trump's lawyer criticized the ruling, while these penalties could 
+    New York company and obtaining loans from New York banks for a specified period. These measures are described as
+    unprecedented threats to Trump's finances and may temporarily set back his real estate company. A court-appointed
+    monitor will oversee the family business. Trump's lawyer criticized the ruling, while these penalties could
     foreshadow challenges he will face in upcoming criminal trials, which carry the potential for imprisonment.
     """,
 )  # Pass
@@ -84,7 +84,7 @@ except Exception as e:
 ```
 Output:
 ```console
-Validation failed for field with errors: The response failed the following metrics: informative, coherent.
+Validation failed for field with errors: The response failed the following metrics: ['informative', 'engaging'].
 ```
 
 ## API Reference
