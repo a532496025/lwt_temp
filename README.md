@@ -18,7 +18,7 @@ This validator validates an LLM response by grading the response against a set o
 
 * Dependencies:
     - `litellm`
-	- guardrails-ai>=0.4.0
+    - guardrails-ai>=0.4.0
 
 * API keys: Set your LLM provider API key as an environment variable which will be used by `litellm` to authenticate with the LLM provider.
 For more information on supported LLM providers and how to set up the API key, refer to the [LiteLLM documentation](https://docs.litellm.ai/docs/).
