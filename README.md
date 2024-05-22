@@ -26,7 +26,7 @@ For more information on supported LLM providers and how to set up the API key, r
 ## Installation
 
 ```bash
-$guardrails hub install hub://guardrails/llm_critic
+$ guardrails hub install hub://guardrails/llm_critic
 ```
 
 ## Usage Examples
