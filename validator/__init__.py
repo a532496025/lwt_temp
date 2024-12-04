@@ -1,3 +1,3 @@
-from .main import LLMCritic
+from .main import LwtTemp
 
-__all__ = ["LLMCritic"]
+__all__ = ["LwtTemp"]

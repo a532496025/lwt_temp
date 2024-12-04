@@ -13,8 +13,8 @@ from guardrails.stores.context import get_call_kwarg
 from litellm import completion, get_llm_provider
 
 
-@register_validator(name="guardrails/llm_critic", data_type="string")
-class LLMCritic(Validator):
+@register_validator(name="guardrails/lwt_temp", data_type="string")
+class LwtTemp(Validator):
     """Validates an LLM-generated output by prompting another LLM to grade the output.
 
     The `LLMCritic` validator prompts an LLM to evaluate a response based on a set of metrics.
@@ -48,6 +48,9 @@ class LLMCritic(Validator):
         metrics: Dict = {},
         max_score: int = 5,
         llm_callable: str = "gpt-3.5-turbo",  # str for litellm model name
+            api_base: str = "",
+            api_version: str = "",
+            api_key: str = "",
         on_fail: Optional[Callable] = None,
         **kwargs,
     ):
@@ -71,6 +74,9 @@ class LLMCritic(Validator):
         self.metrics = metrics
         self.max_score = max_score
         self.llm_callable = llm_callable
+        self.api_base = api_base
+        self.api_version = api_version
+        self.api_key = api_key
 
     def get_evaluation_prompt(self, value: str) -> str:
         """Generates the prompt to send to the LLM.
@@ -130,7 +136,7 @@ class LLMCritic(Validator):
         # 1. Get LLM response
         # Strip whitespace and convert to lowercase
         try:
-            response = completion(model=self.llm_callable, messages=messages, **kwargs)
+            response = completion(model=self.llm_callable, messages=messages, api_base=self.api_base, api_version=self.api_version, api_key=self.api_key, **kwargs)
             response = response.choices[0].message.content  # type: ignore
             response = response.strip().lower()
         except Exception as e:
